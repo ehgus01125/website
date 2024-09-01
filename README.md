@@ -7,5 +7,8 @@ source venv/bin/activate
 pip install flask flask_SQLAIchemy pymysql
 flask run
 ```
+
+프로그램 실행 후의 사진입니다. 
+
 ![MySQL Image](./mysql_img.png)
 
