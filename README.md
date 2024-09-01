@@ -14,6 +14,9 @@ flask run
 
 정상적으로 관리자 계정과 유저들이 생성된 것을 알 수 있습니다.
 
+![index](./index.png)
+![regi](./regi.png)
 ![memo](./memo.png)
+
 
 
