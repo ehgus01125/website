@@ -7,4 +7,4 @@ source venv/bin/activate
 pip install flask flask_SQLAIchemy pymysql
 flask run
 ```
-![[mysql_image.png]]
+![[./mysql_image.png]]
