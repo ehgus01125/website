@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메모 페이지</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .user-message { margin-bottom: 20px; border: 1px solid #ddd; padding: 10px; }
+        .current-user { background-color: #f0f0f0; }
+        form { margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <h1>메모 페이지</h1>
+    
+    <div class="user-message current-user">
+        <h3>내 상태 메시지</h3>
+        <p>{{ current_user.status_message or "상태 메시지가 없습니다." }}</p>
+        <form method="post" action="{{ url_for('update_status') }}">
+            <input type="text" name="status" placeholder="새 상태 메시지" required>
+            <button type="submit">업데이트</button>
+        </form>
+    </div>
+
+    <h2>모든 사용자의 메시지</h2>
+    {% for user in all_users %}
+        {% if user.id != current_user.id %}
+            <div class="user-message">
+                <h3>{{ user.username }}</h3>
+                <p>{{ user.status_message or "상태 메시지가 없습니다." }}</p>
+            </div>
+        {% endif %}
+    {% endfor %}
+
+    <a href="{{ url_for('logout') }}">로그아웃</a>
+</body>
+</html>
